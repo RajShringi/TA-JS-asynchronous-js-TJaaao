@@ -2,7 +2,7 @@ let input = document.querySelector("input");
 let root = document.querySelector(".root");
 function displayImage(data) {
   root.innerHTML = "";
-  data.map((d) => {
+  data.forEach((d) => {
     let li = document.createElement("li");
     let img = document.createElement("img");
     img.src = d.urls.small;
@@ -12,7 +12,7 @@ function displayImage(data) {
   });
 }
 function handleInput(e) {
-  if (e.keyCode === 13) {
+  if (e.keyCode === 13 && e.target.value !== "") {
     let xhr = new XMLHttpRequest();
     xhr.open(
       "GET",
@@ -20,10 +20,22 @@ function handleInput(e) {
     );
     xhr.onload = function () {
       let data = JSON.parse(xhr.response);
-      console.log(data.results);
       displayImage(data.results);
     };
     xhr.send();
+    e.target.value = "";
   }
 }
 input.addEventListener("keyup", handleInput);
+
+function fetch(url, successHandler) {
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", url);
+  xhr.onload = () => successHandler(JSON.parse(xhr.response));
+  xhr.send();
+}
+
+fetch(
+  "https://api.unsplash.com/photos/?client_id=pY9lcHLMUo2rFmDm4CsgviWqnBz4GSgVgXxiojZGWko",
+  displayImage
+);
