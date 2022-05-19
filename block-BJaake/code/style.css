@@ -174,13 +174,17 @@ li {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  font-size: 0;
 }
 .img-container {
   flex: 0 1 45%;
 }
 .info {
   flex: 0 1 45%;
+  font-size: 1rem;
+  padding: 1rem 0;
 }
 h2 {
   font-size: 1.9rem;
