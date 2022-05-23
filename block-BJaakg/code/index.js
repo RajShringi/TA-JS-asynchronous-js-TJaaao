@@ -75,12 +75,23 @@ closeBtn.addEventListener("click", () => {
 function init() {
   hanldeSpinner(true, booksList);
   fetch("https://www.anapioficeandfire.com/api/books")
-    .then((res) => res.json())
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("Response not ok");
+      }
+    })
     .then((value) => {
       isLoading = false;
       hanldeSpinner(false, booksList);
       console.log(value);
       renderBooks(value);
-    });
+    })
+    .catch((error) => console.log(error));
 }
-init();
+if (navigator.onLine) {
+  init();
+} else {
+  console.error("check your internet connection");
+}
