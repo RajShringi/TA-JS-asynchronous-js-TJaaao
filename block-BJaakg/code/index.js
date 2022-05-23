@@ -34,7 +34,7 @@ function renderCharacter(characters) {
 
     chars.forEach((char) => {
       let li = document.createElement("li");
-      li.innerText = `${char.name} (${char.tvSeries.join(" ")})`;
+      li.innerText = `${char.name} (${char.aliases.join(" ")})`;
       characterList.append(li);
     });
   });
