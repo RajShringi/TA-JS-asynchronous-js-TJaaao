@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  background-image: linear-gradient(
+    to right top,
+    #4a8ae9,
+    #aa71da,
+    #e650aa,
+    #fd4066,
+    #eb5c12
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+header {
+  padding: 1rem 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.books {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+li {
+  flex: 0 1 30%;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  background: #fff;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+button {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 0.5em 0.5em;
+  border-radius: 4px;
+  border: 0;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(120, 118, 234);
+  width: 600px;
+  height: 700px;
+  text-align: center;
+  overflow: scroll;
+  padding: 1rem;
+}
+.modal.hidden {
+  display: none;
+}
+.modal.show {
+  display: block;
+}
+
+.button-container {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+.close {
+  background: none;
+  cursor: pointer;
+}
+
+@keyframes donut-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.donut {
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #79ffd5;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: donut-spin 1.2s linear infinite;
+}
+.spinner {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
